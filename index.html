@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit Responsabile Vendite</title>
+    <title>Calcolatore di Margine</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <script defer src="app.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Calcolatore di Margine e Prezzi</h1>
-    </header>
-    <main>
-        <form>
-            <label for="pv">Prezzo di Vendita (PV):</label>
-            <input type="number" id="pv" name="pv">
+    <h1>Calcolatore di Margine e Prezzi</h1>
+    <p>Inserisci i valori per calcolare uno dei seguenti:</p>
 
-            <label for="pa">Prezzo di Acquisto (PA):</label>
-            <input type="number" id="pa" name="pa">
+    <form>
+        <label for="pv">Prezzo di Vendita (PV):</label>
+        <input type="number" id="pv"><br>
 
-            <label for="ua">Unità di Acquisto (UA):</label>
-            <input type="number" id="ua" name="ua">
+        <label for="pa">Prezzo di Acquisto (PA):</label>
+        <input type="number" id="pa"><br>
 
-            <label for="uv">Unità Vendute (UV):</label>
-            <input type="number" id="uv" name="uv">
+        <label for="ua">Unità di Acquisto (UA):</label>
+        <input type="number" id="ua"><br>
 
-            <label for="mc">Margine (Mc%):</label>
-            <input type="number" id="mc" name="mc">
+        <label for="uv">Unità Vendute (UV):</label>
+        <input type="number" id="uv"><br>
 
-            <button type="button" onclick="calculate()">Calcola</button>
-        </form>
-        <p id="result"></p>
-    </main>
+        <label for="mc">Margine (Mc%):</label>
+        <input type="number" id="mc"><br>
+
+        <button type="button" onclick="calculate()">Calcola</button>
+    </form>
+
+    <p id="result"></p>
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log("Service Worker registrato!"))
+                .catch(err => console.log("Errore Service Worker: ", err));
         }
     </script>
 </body>
